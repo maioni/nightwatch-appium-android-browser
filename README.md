@@ -63,6 +63,7 @@ export GRADLE_HOME=/opt/gradle
 export ANDROID_HOME=~/Android/Sdk # ANDROID_HOME
 export PATH=$GRADLE_HOME/bin:/bin:$MAVEN_HOME/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$JAVA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator
 alias android='/opt/android-studio/bin/studio.sh' # Android Studio Alias
+alias emu="$ANDROID_HOME/tools/emulator" # Abdroid Emulator Alias
 export NVM_DIR=~/.nvm # Node Version Manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
