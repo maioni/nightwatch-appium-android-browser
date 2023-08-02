@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="basic.ecosia"
+    errors="1" failures="1" hostname="" id="" package="basic" skipped="0"
+    tests="1" time="77.58" timestamp="">
+  
+    <testcase name="Demo test ecosia.org" classname="basic.ecosia" time="36.63" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Testing if element &lt;.layout__content&gt; contains text &#39;Nightwatch.js&#39; in 5000ms - expected &#34;contains text &#39;Nightwatch.js&#39;&#34; but got: &#34;does not contain &#39;Nightwatch.js&#39;&#34; (5058ms)">    at DescribeInstance.&lt;anonymous&gt; (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/basic/ecosia.js:16:15)</failure>
+
+    
+    <error message="Testing if element [0;33m&lt;.layout__content&gt;[0m contains text [0;33m&#39;Nightwatch.js&#39;[0m in 5000ms - expected [0;32m&#34;contains text &#39;Nightwatch.js&#39;&#34;[0m but got: [0;31m&#34;does not contain &#39;Nightwatch.js&#39;&#34;[0m [0;90m(5058ms)[0m" type="error"><![CDATA[
+    Error: 
+    at Proxy.&lt;anonymous&gt; (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/api/index.js:139:40)
+    at DescribeInstance.&lt;anonymous&gt; (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/basic/ecosia.js:16:15)
+    at Context.call (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/context.js:412:39)
+    at TestCase.run (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/testcase.js:49:39)
+    at Runnable.__runFn (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:646:84)
+    at Runnable.run (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/runnable.js:102:27)
+    at TestSuite.executeRunnable (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:775:55)
+    at TestSuite.handleRunnable (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:788:39)
+    at /home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:646:25
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at DefaultRunner.runTestSuite (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/runner/test-runners/default.js:68:13)
+    at DefaultRunner.promiseFn (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/runner/test-runners/default.js:83:13)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       TimeoutError
+   An error occurred while running .click() command on &lt;button[type=submit]&gt;: Tried to run command without establishing a connection
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchSessionError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Error location:
+    /home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/basic/ecosia.js:
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     13 |       .setValue(&#39;input[type=search]&#39;, &#39;nightwatch js&#39;)
+     14 |       .assert.visible(&#39;button[type=submit]&#39;)
+     15 |       .click(&#39;button[type=submit]&#39;) 
+     16 |       .assert.textContains(&#39;.layout__content&#39;, &#39;Nightwatch.js&#39;);
+     17 |   });
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

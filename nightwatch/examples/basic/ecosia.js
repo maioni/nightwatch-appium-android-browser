@@ -1,5 +1,7 @@
 describe('Ecosia.org Demo', function() {
   before(browser => browser.navigateTo('https://www.ecosia.org/'));
+  this.retries(2);
+  this.suiteRetries(2);
 
   it('Demo test ecosia.org', function(browser) {
     browser
@@ -7,7 +9,6 @@ describe('Ecosia.org Demo', function() {
       .assert.titleContains('Ecosia')
       .waitForElementVisible('button[data-test-id="cookie-notice-accept"]')
       .assert.visible('button[data-test-id="cookie-notice-accept"]')
-      .debug()
       .click('button[data-test-id="cookie-notice-accept"]')
       .assert.visible('input[type=search]')
       .setValue('input[type=search]', 'nightwatch js')

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="with-page-objects.google"
+    errors="1" failures="1" hostname="" id="" package="with-page-objects" skipped="0"
+    tests="1" time="15.26" timestamp="">
+  
+    <testcase name="should find nightwatch.js in results" classname="with-page-objects.google" time="6.179" assertions="1">  <failure message="Timed out while waiting for element &lt;input[value=&#34;Google Search&#34;]&gt; to be present for 1000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (1015ms)">    at Page.submit (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/page-objects/google/search.js:17:10)
+    at DescribeInstance.&lt;anonymous&gt; (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/with-page-objects/google.js:20:14)</failure>
+
+    
+    <error message="Timed out while waiting for element &lt;input[value=&#34;Google Search&#34;]&gt; to be present for 1000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m [0;90m(1015ms)[0m" type="error"><![CDATA[
+    Error
+    at Command.executeCommand (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/page-object/command-wrapper.js:234:26)
+    at Page.waitForElementVisible (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/page-object/command-wrapper.js:71:33)
+    at Page.submit (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/page-objects/google/search.js:17:10)
+    at DescribeInstance.&lt;anonymous&gt; (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/with-page-objects/google.js:20:14)
+    at Context.call (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/context.js:412:39)
+    at TestCase.run (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/testcase.js:49:39)
+    at Runnable.__runFn (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:646:84)
+    at Runnable.run (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/runnable.js:102:27)
+    at TestSuite.executeRunnable (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:775:55)
+    at TestSuite.handleRunnable (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/testsuite/index.js:788:39)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    /home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/with-page-objects/google.js:
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     17 | 
+     18 |   it(&#39;should find nightwatch.js in results&#39;, function(browser) {
+     19 |     homePage.setValue(&#39;@searchBar&#39;, &#39;Nightwatch.js&#39;); 
+     20 |     homePage.submit();
+     21 | 
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    /home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/with-page-objects/google.js:
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     17 | 
+     18 |   it(&#39;should find nightwatch.js in results&#39;, function(browser) {
+     19 |     homePage.setValue(&#39;@searchBar&#39;, &#39;Nightwatch.js&#39;); 
+     20 |     homePage.submit();
+     21 | 
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

@@ -34,7 +34,8 @@ module.exports = {
   webdriver: {},
 
   test_workers: {
-    enabled: true
+    enabled: false,
+    workers: 'auto'
   },
 
   test_settings: {
@@ -59,6 +60,29 @@ module.exports = {
       
     },
     
+    firefox: {
+      desiredCapabilities: {
+        browserName: 'firefox',
+        alwaysMatch: {
+          acceptInsecureCerts: true,
+          'moz:firefoxOptions': {
+            args: [
+              // '-headless',
+              // '-verbose'
+            ]
+          }
+        }
+      },
+      webdriver: {
+        start_process: true,
+        server_path: '',
+        cli_args: [
+          // very verbose geckodriver logs
+          // '-vv'
+        ]
+      }
+    },
+    
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
@@ -81,6 +105,82 @@ module.exports = {
         server_path: '',
         cli_args: [
           // --verbose
+        ]
+      }
+    },
+    
+    edge: {
+      desiredCapabilities: {
+        browserName: 'MicrosoftEdge',
+        'ms:edgeOptions': {
+          w3c: true,
+          // More info on EdgeDriver: https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/capabilities-edge-options
+          args: [
+            //'--headless'
+          ]
+        }
+      },
+
+      webdriver: {
+        start_process: true,
+        // Follow https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/?tabs=c-sharp#download-microsoft-edge-webdriver
+        // to download the Edge WebDriver and set the location of extracted `msedgedriver` below:
+        server_path: '',
+        cli_args: [
+          // --verbose
+        ]
+      }
+    },
+    
+    'android.real.firefox': {
+      desiredCapabilities: {
+        real_mobile: true,
+        browserName: 'firefox',
+        acceptInsecureCerts: true,
+        'moz:firefoxOptions': {
+          args: [
+            // '-headless',
+            // '-verbose'
+          ],
+          androidPackage: 'org.mozilla.firefox',
+          // add the device serial to run tests on, if multiple devices are online
+          // Run command: `$ANDROID_HOME/platform-tools/adb devices`
+          // androidDeviceSerial: 'ZD2222W62Y'
+        }
+      },
+      webdriver: {
+        start_process: true,
+        server_path: '',
+        cli_args: [
+          // very verbose geckodriver logs
+          // '-vv'
+        ]
+      }
+    },
+
+    'android.emulator.firefox': {
+      desiredCapabilities: {
+        real_mobile: false,
+        avd: 'nightwatch-android-11',
+        browserName: 'firefox',
+        acceptInsecureCerts: true,
+        'moz:firefoxOptions': {
+          args: [
+            // '-headless',
+            // '-verbose'
+          ],
+          androidPackage: 'org.mozilla.firefox',
+          // add the device serial to run tests on, if multiple devices are online
+          // Run command: `$ANDROID_HOME/platform-tools/adb devices`
+          // androidDeviceSerial: 'ZD2222W62Y'
+        }
+      },
+      webdriver: {
+        start_process: true,
+        server_path: '',
+        cli_args: [
+          // very verbose geckodriver logs
+          // '-vv'
         ]
       }
     },
@@ -230,6 +330,126 @@ module.exports = {
           deviceName: "iPhone 13"
         },
         browserName: 'safari'
+      }
+    },
+    
+  ////////////////////////////////////////////////////////////////////////////////////
+    // Configuration for using the Sauce Labs cloud service                          |
+    //                                                                               |
+    // Please set the username and access key by setting the environment variables:  |
+    // - SAUCE_USERNAME                                                              |
+    // - SAUCE_ACCESS_KEY                                                            |
+    //////////////////////////////////////////////////////////////////////////////////
+    saucelabs: {
+      selenium: {
+        host: 'ondemand.saucelabs.com',
+        port: 443
+      },
+      // More info on configuring capabilities can be found on:
+      // https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options
+      desiredCapabilities: {
+        'sauce:options': {
+          username: '${SAUCE_USERNAME}',
+          accessKey: '${SAUCE_ACCESS_KEY}',
+          screenResolution: '1280x1024'
+          // https://docs.saucelabs.com/dev/cli/sauce-connect-proxy/#--region
+          // region: 'us-west-1'
+          // https://docs.saucelabs.com/dev/test-configuration-options/#tunnelidentifier
+          // parentTunnel: '',
+          // tunnelIdentifier: '',
+        },
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        // https://docs.saucelabs.com/dev/test-configuration-options/#timezone
+        timeZone: 'London'
+      },
+      disable_error_log: false,
+      webdriver: {
+        start_process: false
+      }
+    },
+    
+    'saucelabs.chrome': {
+      extends: 'saucelabs',
+      desiredCapabilities: {
+        browserName: 'chrome',
+        browserVersion: 'latest',
+        platformName: 'Windows 10',
+        'goog:chromeOptions': {
+          w3c: true
+        }
+      }
+    },
+    
+    'saucelabs.firefox': {
+      extends: 'saucelabs',
+      desiredCapabilities: {
+        browserName: 'firefox',
+        browserVersion: 'latest',
+        platformName: 'Windows 10'
+      }
+    },
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+    // Configuration for using remote Selenium service or a cloud-based testing provider.  |
+    //                                                                                     |
+    // Please set the hostname and port of your remote selenium-server or cloud-provider   |
+    // (by setting the following properties in the configuration below):                   |
+    // - `selenium.host`                                                                   |
+    // - `selenium.port`                                                                   |
+    //                                                                                     |
+    // If you are using a cloud provider such as CrossBrowserTesting, LambdaTests, etc.,   |
+    // please set the username and access_key by setting the below environment variables:  |
+    // - REMOTE_USERNAME                                                                   |
+    // - REMOTE_ACCESS_KEY                                                                 |
+    // (.env files are supported)                                                          |
+    ////////////////////////////////////////////////////////////////////////////////////////
+    remote: {
+      // Info on all the available options with "selenium":
+      // https://nightwatchjs.org/guide/configuration/settings.html#selenium-server-settings
+      selenium: {
+        start_process: false,
+        server_path: '',
+        host: '<remote-hostname>',
+        port: 4444
+      },
+
+      username: '${REMOTE_USERNAME}',
+      access_key: '${REMOTE_ACCESS_KEY}',
+
+      webdriver: {
+        keep_alive: true,
+        start_process: false
+      }
+    },
+    
+    'remote.chrome': {
+      extends: 'remote',
+      desiredCapabilities: {
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          w3c: true
+        }
+      }
+    },
+    
+    'remote.firefox': {
+      extends: 'remote',
+      desiredCapabilities: {
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+          args: [
+            // '-headless',
+            // '-verbose'
+          ]
+        }
+      }
+    },
+    
+    'remote.edge': {
+      extends: 'remote',
+      desiredCapabilities: {
+        browserName: 'MicrosoftEdge'
       }
     },
     
