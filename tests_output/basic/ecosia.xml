@@ -5,18 +5,14 @@
 
   <testsuite name="basic.ecosia"
     errors="0" failures="0" hostname="" id="" package="basic" skipped="1"
-    tests="0" time="0.004000" timestamp="">
+    tests="0" time="0.000" timestamp="">
   
 
   
 
     
-    <error message="An error occurred while creating a new GeckoDriver session: [WebDriverError] adb error: fchown failed: Operation not permitted"><![CDATA[
-      WebDriverError: An error occurred while creating a new GeckoDriver session: [WebDriverError] adb error: fchown failed: Operation not permitted
-    at Object.throwDecodedError (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/selenium-webdriver/lib/error.js:524:15)
-    at parseHttpResponse (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/selenium-webdriver/lib/http.js:601:13)
-    at Executor.execute (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/selenium-webdriver/lib/http.js:529:28)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    <error message=""><![CDATA[
+      
       ]]></error>  
 
   

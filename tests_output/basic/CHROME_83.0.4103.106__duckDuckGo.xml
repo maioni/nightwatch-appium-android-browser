@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="basic.duckDuckGo"
+    errors="0" failures="1" hostname="" id="" package="basic" skipped="0"
+    tests="1" time="341.4" timestamp="">
+  
+    <testcase name="Search Nightwatch.js and check results" classname="basic.duckDuckGo" time="170.7" assertions="2">
+
+      <failure message="Testing if element &lt;.results--main&gt; is visible in 5000ms - expected &#34;is visible&#34; but got: &#34;element could not be located&#34; (5088ms)">    at DescribeInstance.&lt;anonymous&gt; (/home/popos/Projetos/nightwatch-appium-android-browser/nightwatch/examples/basic/duckDuckGo.js:8:15)</failure>
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       TimeoutError
+   done() callback timeout of 20000ms was reached while executing &#34;before&#34;. Make sure to call the done() callback when the operation finishes.
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

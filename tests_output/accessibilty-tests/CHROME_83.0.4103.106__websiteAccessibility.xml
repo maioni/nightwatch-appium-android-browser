@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="accessibilty-tests.websiteAccessibility"
+    errors="1" failures="0" hostname="" id="" package="accessibilty-tests" skipped="1"
+    tests="0" time="1.981" timestamp="">
+  
+
+  
+    <system-err>
+       TimeoutError
+   done() callback timeout of 20000ms was reached while executing &#34;before&#34;. Make sure to call the done() callback when the operation finishes.
+    </system-err>
+  
+
+    
+    <error message="done() callback timeout of 20000ms was reached while executing &#34;before&#34;. Make sure to call the done() callback when the operation finishes."><![CDATA[
+      TimeoutError: done() callback timeout of 20000ms was reached while executing &#34;before&#34;. Make sure to call the done() callback when the operation finishes.
+    at Timeout._onTimeout (/home/popos/Projetos/nightwatch-appium-android-browser/node_modules/nightwatch/dist/utils/timed-callback.js:43:23)
+    at listOnTimeout (node:internal/timers:573:17)
+    at processTimers (node:internal/timers:514:7)
+      ]]></error>  
+
+  
+    
+    <testcase
+      name="Nightwatch website page has accessible headers" classname="accessibilty-tests.websiteAccessibility">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

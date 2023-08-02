@@ -162,6 +162,7 @@ module.exports = {
       desiredCapabilities: {
         real_mobile: false,
         avd: 'nightwatch-android-11',
+        //avd: 'nightwatch-android-11-2',
         browserName: 'firefox',
         acceptInsecureCerts: true,
         'moz:firefoxOptions': {
@@ -173,6 +174,7 @@ module.exports = {
           // add the device serial to run tests on, if multiple devices are online
           // Run command: `$ANDROID_HOME/platform-tools/adb devices`
           // androidDeviceSerial: 'ZD2222W62Y'
+          //androidDeviceSerial: 'emulator-5556'
         }
       },
       webdriver: {
@@ -236,6 +238,7 @@ module.exports = {
           // add the device serial to run tests on, if multiple devices are online
           // Run command: `$ANDROID_HOME/platform-tools/adb devices`
           // androidDeviceSerial: ''
+          //androidDeviceSerial: 'emulator-5554'
         },
       },
     

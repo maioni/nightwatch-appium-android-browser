@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="with-custom-assertions.todoList"
+    errors="0" failures="0" hostname="" id="" package="with-custom-assertions" skipped="0"
+    tests="1" time="6.393" timestamp="">
+  
+    <testcase name="should add a new todo element" classname="with-custom-assertions.todoList" time="3.196" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       TimeoutError
+   done() callback timeout of 20000ms was reached while executing &#34;before&#34;. Make sure to call the done() callback when the operation finishes.
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
