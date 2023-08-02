@@ -72,6 +72,10 @@ export NVM_DIR=~/.nvm # Node Version Manager
 # to run test cases
 ```bash
 npx nightwatch ./nightwatch/examples/basic/ecosia.js --env android.emulator.chrome
+OR
+npm run test
+OR
+npm run all
 ```
 # How to setup and guide about this material
 

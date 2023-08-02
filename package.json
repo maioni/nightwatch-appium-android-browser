@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx nightwatch ./nightwatch/examples/basic/ecosia.js --env android.emulator.chrome",
+    "all": "npx nightwatch ./nightwatch/examples/basic/ecosia.js --env android.emulator.chrome"
   },
   "keywords": [],
   "author": "",
